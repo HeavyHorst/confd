@@ -36,6 +36,9 @@ before_install:
   - tar xzf zookeeper-3.4.8.tar.gz
   - mkdir /tmp/zookeeper && cp integration/zookeeper/zoo.cfg zookeeper-3.4.8/conf/zoo.cfg
   - zookeeper-3.4.8/bin/zkServer.sh start
+  - go get github.com/kelseyhightower/confd/backends
+  - go get github.com/kelseyhightower/confd/log
+  - go get github.com/kelseyhightower/confd/resource/template
 install:
   - sudo pip install awscli
   - go get golang.org/x/tools/cmd/cover
